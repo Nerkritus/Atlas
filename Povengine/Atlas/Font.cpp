@@ -66,6 +66,8 @@ bool Font::AddFontGlyphs(FT_Face face)
 	}
 
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 4);
+
+	return true;
 }
 
 /// <summary>

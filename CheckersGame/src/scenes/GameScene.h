@@ -7,8 +7,6 @@
 
 namespace AtlasCheckers
 {
-	const int BOARD_SIZE = 8;
-
 	class GameScene : public Atlas::Scene
 	{
 	public:
@@ -22,7 +20,7 @@ namespace AtlasCheckers
 	private:
 		virtual void LoadDynamicAssets();
 		void AddBoardTile(int xPos, int zPos, bool isWhite);
-		void AddPiece(int xPos, int zPos, int numID, bool isWhite);
+		void AddPiece(int xPos, int zPos, int numID, PlayerColours colour);
 
 		glm::vec3 _redCamHome;
 		glm::vec3 _whiteCamHome;
@@ -35,10 +33,15 @@ namespace AtlasCheckers
 		Atlas::Text* _turnCountLabel;
 		Atlas::Text* _whiteCapturesLabel;
 		Atlas::Text* _redCapturesLabel;
+		Atlas::Text* _infoLabel;
 		Atlas::EntityInstance* _redSelect;
 		Atlas::EntityInstance* _whiteSelect;
 
 		// State variables
 		CheckersGameState _state;
+
+		// Sounds
+		unsigned int _sndOK;
+		unsigned int _sndNO;
 	};
 }

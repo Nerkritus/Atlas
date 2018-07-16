@@ -39,7 +39,8 @@
 			<shader name="littex"/> 
 			<position x="0" y="-10.0" z="0"/> 
 			<uniformscale value="10"/> 
-			<texture name="dirt.png"/> 
+			<texture name="dirt.png"/>
+			<physics mass="0.0"/>
 		</plane>
 		
 	</entities>

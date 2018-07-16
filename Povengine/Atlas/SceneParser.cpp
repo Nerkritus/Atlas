@@ -271,6 +271,8 @@ bool SceneParser::ParseEntity(Scene* scene, XMLElement* element, Subsystems& sub
 		entityInfo.pos = glm::vec3(0, 0, 0);
 		entityInfo.texRepeat = 1;
 		entityInfo.id = name;
+		entityInfo.enablePhysics = false;
+		entityInfo.mass = 0;
 		scene->AddEntity(subsystems._geometry->CreateEntity(entityInfo, subsystems._phys));
 		return true;
 	}

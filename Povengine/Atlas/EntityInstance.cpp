@@ -47,3 +47,18 @@ void EntityInstance::PrepareEntity()
 	_internalEntity->SetPosition(GetPosition());
 	_internalEntity->SetMaterial(_material);
 }
+
+/// <summary>
+/// Creates a new entityinstance from the given create info class
+/// </summary>
+EntityInstance* EntityInstance::FromCreateInfo(EntityCreateInfo& info, BaseEntity* instanceOf)
+{
+	auto ei = new EntityInstance();
+	ei->Initialise(info.id, instanceOf);
+	ei->SetPosition(info.pos);
+	ei->SetUniformScale(info.uniformScale);
+	ei->SetID(info.numID);
+
+
+	return ei;
+}

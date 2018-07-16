@@ -65,7 +65,7 @@ bool OpenGLRenderer::Initialise(unsigned int width, unsigned int height, void* c
 	_useVer45 = glewIsSupported("GL_VERSION_4_5");
 
 	glViewport(0, 0, width, height);
-	_proj = glm::perspective(45.0f, (float)width / (float)height, 0.1f, 100.0f);
+	_proj = glm::perspective(45.0f, (float)width / (float)height, 0.1f, 500.0f);
 
 	_initialised = true;
 	return true;
@@ -80,7 +80,7 @@ void OpenGLRenderer::Resize(unsigned int width, unsigned int height)
 #ifdef _WIN32
 	glViewport(0, 0, _width, _height);
 
-	_proj = glm::perspective(45.0f, (float)width / (float)height, 0.1f, 100.0f);
+	_proj = glm::perspective(45.0f, (float)width / (float)height, 0.1f, 500.0f);
 
 	glLoadIdentity();
 	glMatrixMode(GL_PROJECTION);

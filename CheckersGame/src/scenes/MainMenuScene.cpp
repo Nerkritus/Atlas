@@ -58,25 +58,25 @@ void MainMenuScene::SceneLoaded()
 ///
 void MainMenuScene::LoadDynamicAssets()
 {
-	int xPos = -7, zPos = -7;
-	bool isWhite = false;
+	//int xPos = -7, zPos = -7;
+	//bool isWhite = false;
 
-	int id = 0;
+	//int id = 0;
 
-	// Generate game board
-	for (int i = 0; i < 8; i++) {
-		isWhite = i % 2 == 0;
-		for (int j = 0; j < 8; j++) {
-			AddBoardTile(xPos, zPos, isWhite);
-			if (!isWhite && (i <= 2 || i >= 5)) {
-				AddPiece(xPos, zPos, id++, i <= 2);
-			}
-			isWhite = !isWhite;
-			xPos += 2;
-		}
-		zPos += 2;
-		xPos = -7;
-	}
+	//// Generate game board
+	//for (int i = 0; i < 8; i++) {
+	//	isWhite = i % 2 == 0;
+	//	for (int j = 0; j < 8; j++) {
+	//		AddBoardTile(xPos, zPos, isWhite);
+	//		if (!isWhite && (i <= 2 || i >= 5)) {
+	//			AddPiece(xPos, zPos, id++, i <= 2);
+	//		}
+	//		isWhite = !isWhite;
+	//		xPos += 2;
+	//	}
+	//	zPos += 2;
+	//	xPos = -7;
+	//}
 }
 
 ///
@@ -176,7 +176,7 @@ void MainMenuScene::UpdateScene(double frameDelta)
 void MainMenuScene::InputProcessing(Input* input)
 {
 	if (!_selectionPending) {
-		if (input->IsKeyPressed((int)AtlasKey::Enter)) {
+		if (input->IsKeyPressed((int)AtlasKey::Enter, 1000)) {
 			PlaySound(_sndSelectId);
 			_selectionPending = true;
 		}
@@ -191,21 +191,23 @@ void MainMenuScene::InputProcessing(Input* input)
 	}
 }
 
-
-void MainMenuScene::ShowHelp()
+///
+///
+///
+void MainMenuScene::ShowHelp(bool show)
 {
-	_menuBackground->SetVisibility(false);
-	_newGameLabel->SetVisibility(false);
-	_loadGameLabel->SetVisibility(false);
-	_exitLabel->SetVisibility(false);
-	_helpLabel->SetVisibility(false);
+	_menuBackground->SetVisibility(!show);
+	_newGameLabel->SetVisibility(!show);
+	_loadGameLabel->SetVisibility(!show);
+	_exitLabel->SetVisibility(!show);
+	_helpLabel->SetVisibility(!show);
 
-	_helpBackground->SetVisibility(true);
-	_helpText1->SetVisibility(true);
-	_helpText2->SetVisibility(true);
-	_helpText3->SetVisibility(true);
-	_helpText4->SetVisibility(true);
-	_helpText5->SetVisibility(true);
-	_helpText6->SetVisibility(true);
-	_helpText7->SetVisibility(true);
+	_helpBackground->SetVisibility(show);
+	_helpText1->SetVisibility(show);
+	_helpText2->SetVisibility(show);
+	_helpText3->SetVisibility(show);
+	_helpText4->SetVisibility(show);
+	_helpText5->SetVisibility(show);
+	_helpText6->SetVisibility(show);
+	_helpText7->SetVisibility(show);
 }

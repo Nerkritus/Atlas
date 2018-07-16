@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 #include "glm.hpp"
-#include "EntityTypes.h"
 #include "EntityTypeEnum.h"
 #include "Shader.h"
 

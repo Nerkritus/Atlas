@@ -4,7 +4,7 @@
 
 namespace Atlas
 {
-	Text::Text(std::string text, float x, float y, Font* font, Shader* shader, glm::vec3 colour, TextAlignmentEnum horizontalAlignment, TextAlignmentEnum verticalAlignment)
+	Text::Text(const std::string text, float x, float y, Font* font, Shader* shader, glm::vec3 colour, TextAlignmentEnum horizontalAlignment, TextAlignmentEnum verticalAlignment)
 		: Sprite(0, 0, 1, 1, shader, colour), _font(font), _x(x), _y(y), _horizontalAlignment(horizontalAlignment), _verticalAlignment(verticalAlignment)
 	{
 		SetText(text);

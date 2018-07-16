@@ -36,6 +36,8 @@ void TestScene::UpdateScene(double frameDelta)
 		ei.textureID[0] = _crateTex;
 		ei.shader = _subsystems._shaderManager->GetShaderByName("littex");
 		ei.lifetimeMs = 10000;
+		ei.enablePhysics = true;
+		ei.mass = 1.0f;
 		AddEntity(_subsystems._geometry->CreateEntity(ei, _subsystems._phys));
 
 

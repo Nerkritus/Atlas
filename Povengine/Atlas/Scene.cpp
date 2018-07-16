@@ -110,7 +110,7 @@ void Scene::AddLight(Light* light)
 /// <param name="y">y position (screen coordinates) of the text. If y is negative, text will be vertically centred</param>
 /// <param name="style">style of the text</param>
 /// <returns>Returns the numeric index of the added text</returns>
-int Scene::AddText(std::string& id, std::string& text, int x, int y, FontStyleEnum style, TextAlignmentEnum horizontalAlignment = TextAlignmentEnum::Left, TextAlignmentEnum verticalAlignment = TextAlignmentEnum::Top, bool visible = true)
+int Scene::AddText(const std::string& id, const std::string& text, int x, int y, FontStyleEnum style, TextAlignmentEnum horizontalAlignment = TextAlignmentEnum::Left, TextAlignmentEnum verticalAlignment = TextAlignmentEnum::Top, bool visible = true)
 {
 	Text* newText = new Text(text, x, y, _subsystems._fonts->GetFont(style), _subsystems._shaderManager->GetShaderByName("text"), glm::vec3(1.0f, 1.0f, 1.0f), horizontalAlignment, verticalAlignment);
 	newText->SetID(id);
@@ -156,10 +156,7 @@ void Scene::AddMesh(std::string& meshName, EntityCreateInfo& info)
 	mat.diffuseColour = info.colour;
 
 	if (mesh != nullptr) {
-		auto ei = new EntityInstance();
-		ei->Initialise(info.id, mesh);
-		ei->SetPosition(info.pos);
-		ei->SetUniformScale(info.uniformScale);
+		auto ei = EntityInstance::FromCreateInfo(info, mesh);
 		ei->SetMaterial(mat);
 
 		_entities.push_back(ei);
@@ -175,10 +172,7 @@ void Scene::AddMesh(std::string& meshName, EntityCreateInfo& info)
 	mesh = new Mesh(meshName, &verts, &norms, &indices, &normalIndices, info.colour, _subsystems._shaderManager->GetShaderByName("lighting"));
 	_subsystems._geometry->AddMesh(mesh);
 	
-	auto ei = new EntityInstance();
-	ei->Initialise(info.id, mesh);
-	ei->SetUniformScale(info.uniformScale);
-	ei->SetPosition(info.pos);
+	auto ei = EntityInstance::FromCreateInfo(info, mesh);
 	ei->SetMaterial(mat);
 
 	_entities.push_back(ei);
@@ -325,6 +319,9 @@ void Scene::DrawScene(glm::mat4 proj, glm::mat4 proj2D)
 			if (tmp != nullptr && tmp->IsPhysicsEnabled()) {
 				tmp->UpdateFromPhysics(_subsystems._phys);
 			}
+			if (i->GetEntity()->GetType() == EntityTypeEnum::ET_Skybox) {
+				i->SetPosition(_cam.GetPosition().x, _cam.GetPosition().y, _cam.GetPosition().z);
+			}
 			i->Update();
 			entity->Render(view, proj, _cam.GetPosition(), _lights);
 		}
@@ -386,6 +383,22 @@ EntityInstance* Scene::GetEntityById(const std::string& id)
 			return i;
 		}
 	}
+	return nullptr;
+}
+
+EntityInstance* Scene::GetEntityById(const int id)
+{
+	for (auto i : _entities)
+	{
+		if (i == nullptr) {
+			continue;
+		}
+
+		if (i->GetNumID() == id) {
+			return i;
+		}
+	}
+	return nullptr;
 }
 
 

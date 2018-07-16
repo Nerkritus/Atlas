@@ -20,7 +20,7 @@ namespace AtlasCheckers
 		virtual void InputProcessing(Atlas::Input* input);
 
 		void UpdateMenuSelection(bool prev);
-		void ShowHelp();
+		void ShowHelp(bool show);
 
 		bool IsSelectionPending() { return _selectionPending; }
 		MainMenuItemsEnum GetSelection() { _selectionPending = false; return _currentMenuSelection; }

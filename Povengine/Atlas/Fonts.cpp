@@ -129,4 +129,6 @@ Font* Fonts::GetFont(FontStyleEnum style)
 			return f;
 		}
 	}
+
+	return nullptr;
 }

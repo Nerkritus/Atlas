@@ -11,7 +11,7 @@ namespace Atlas
 	class Text : public Sprite
 	{
 	public:
-		Text(std::string text, float x, float y , Font* fonts, Shader* shader, glm::vec3 colour, TextAlignmentEnum horizontalAlignment, TextAlignmentEnum verticalAlignment);
+		Text(const std::string text, float x, float y , Font* fonts, Shader* shader, glm::vec3 colour, TextAlignmentEnum horizontalAlignment, TextAlignmentEnum verticalAlignment);
 		virtual ~Text();
 
 		virtual void Render(glm::mat4& view, glm::mat4& proj, glm::vec3& cameraPos, std::vector<Light*>& lights);

@@ -53,8 +53,11 @@ void CheckersGame::InputProcessing(Input* input)
 	}
 
 	if (input->IsKeyPressed((unsigned int)AtlasKey::Escape, 1000)) {
-		if (_pendingScene == nullptr && _currentScene == _mainMenuScene) {
-			_pendingScene = _gameScene;
+		if (_pendingScene == nullptr && _currentScene == _mainMenuScene)
+		{
+			if (_gameScene != nullptr) {
+				_pendingScene = _gameScene;
+			}
 		}
 		else {
 			_pendingScene = _mainMenuScene;
@@ -78,7 +81,7 @@ void CheckersGame::UpdateGame(double frameDelta)
 					_pendingScene = _gameScene;
 					break;
 				case MainMenuItemsEnum::Help:
-					_mainMenuScene->ShowHelp();
+					_mainMenuScene->ShowHelp(true);
 					break;
 				case MainMenuItemsEnum::Exit:
 					exit(0);

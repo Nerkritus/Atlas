@@ -1,9 +1,10 @@
 #pragma once
 
 #include "BaseEntity.h"
+#include "EntityCreateInfo.h"
 
 namespace Atlas
-{
+{ 
 	class EntityInstance : public Transformable
 	{
 	public:
@@ -24,6 +25,8 @@ namespace Atlas
 
 		virtual void SetVisibility(bool isVisible) { _visible = isVisible; }
 		bool IsVisible() { return _visible; }
+
+		static EntityInstance* FromCreateInfo(EntityCreateInfo& info, BaseEntity* instanceOf);
 
 	protected:
 		BaseEntity* _internalEntity;
