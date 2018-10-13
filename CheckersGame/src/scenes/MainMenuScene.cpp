@@ -16,6 +16,7 @@ MainMenuScene::MainMenuScene(std::string name)
 	_currentMenuSelection = MainMenuItemsEnum::NewResumeGame;
 
 	_newGameLabel = nullptr;
+	_resumeGameLabel = nullptr;
 	_loadGameLabel = nullptr;
 	_exitLabel = nullptr;
 }
@@ -27,7 +28,8 @@ void MainMenuScene::SceneLoaded()
 {
 	//// Populate the items we need to track
 	_menuBackground = GetSpriteById("s0");
-	_newGameLabel = GetTextById("m_newresume");
+	_newGameLabel = GetTextById("m_new");
+	_resumeGameLabel = GetTextById("m_resume");
 	_loadGameLabel = GetTextById("m_loadgame");
 	_exitLabel = GetTextById("m_exit");
 	_helpLabel = GetTextById("m_help");
@@ -45,6 +47,7 @@ void MainMenuScene::SceneLoaded()
 	_sndSelectId = GetSoundByName("porcSmall.wav")->soundId;
 
 	SetSelectedLabel(_newGameLabel, true);
+	SetGameRunning(false);
 
 	LoadDynamicAssets();
 
@@ -58,25 +61,6 @@ void MainMenuScene::SceneLoaded()
 ///
 void MainMenuScene::LoadDynamicAssets()
 {
-	//int xPos = -7, zPos = -7;
-	//bool isWhite = false;
-
-	//int id = 0;
-
-	//// Generate game board
-	//for (int i = 0; i < 8; i++) {
-	//	isWhite = i % 2 == 0;
-	//	for (int j = 0; j < 8; j++) {
-	//		AddBoardTile(xPos, zPos, isWhite);
-	//		if (!isWhite && (i <= 2 || i >= 5)) {
-	//			AddPiece(xPos, zPos, id++, i <= 2);
-	//		}
-	//		isWhite = !isWhite;
-	//		xPos += 2;
-	//	}
-	//	zPos += 2;
-	//	xPos = -7;
-	//}
 }
 
 ///
@@ -147,6 +131,7 @@ void MainMenuScene::UpdateMenuSelection(bool prev)
 	PlaySound(_sndPipId);
 
 	SetSelectedLabel(_newGameLabel, _currentMenuSelection == MainMenuItemsEnum::NewResumeGame);
+	SetSelectedLabel(_resumeGameLabel, _currentMenuSelection == MainMenuItemsEnum::NewResumeGame);
 	SetSelectedLabel(_loadGameLabel, _currentMenuSelection == MainMenuItemsEnum::LoadGame);
 	SetSelectedLabel(_helpLabel, _currentMenuSelection == MainMenuItemsEnum::Help);
 	SetSelectedLabel(_exitLabel, _currentMenuSelection == MainMenuItemsEnum::Exit);
@@ -196,6 +181,8 @@ void MainMenuScene::InputProcessing(Input* input)
 ///
 void MainMenuScene::ShowHelp(bool show)
 {
+	_showingHelp = show;
+
 	_menuBackground->SetVisibility(!show);
 	_newGameLabel->SetVisibility(!show);
 	_loadGameLabel->SetVisibility(!show);
@@ -210,4 +197,13 @@ void MainMenuScene::ShowHelp(bool show)
 	_helpText5->SetVisibility(show);
 	_helpText6->SetVisibility(show);
 	_helpText7->SetVisibility(show);
+}
+
+///
+//
+//
+void MainMenuScene::SetGameRunning(bool running)
+{
+	_newGameLabel->SetVisibility(!running);
+	_resumeGameLabel->SetVisibility(running);
 }

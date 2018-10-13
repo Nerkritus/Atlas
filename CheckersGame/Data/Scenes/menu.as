@@ -37,7 +37,8 @@
 		
 		<text id="m_title" value="Atlas Draughts" horizontalalignment="centre" y="100" style="title"/>
 		
-		<text id="m_newresume" value="New Game" horizontalalignment="centre" y="320" style="xlarge"/>
+		<text id="m_new" value="New Game" horizontalalignment="centre" y="320" style="xlarge"/>
+		<text id="m_resume" value="Resume Game" horizontalalignment="centre" y="320" style="xlarge"/>
 		<text id="m_loadgame" value="Load Game" horizontalalignment="centre" y="400" style="xlarge"/>
 		<text id="m_help" value="Help" horizontalalignment="centre" y="480" style="xlarge"/>
 		<text id="m_exit" value="Exit" horizontalalignment="centre" y="560" style="xlarge"/>

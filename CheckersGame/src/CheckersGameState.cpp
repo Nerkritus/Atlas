@@ -7,7 +7,7 @@ using namespace AtlasCheckers;
 //
 void CheckersGameState::NewGame()
 {
-	_turnsCount = 1;
+	_turnsCount = 0;
 	_whiteCaptures = 0;
 	_redCaptures = 0;
 	_currentTurnColour = PlayerColours::White;
@@ -42,6 +42,7 @@ void CheckersGameState::NewGame()
 			isWhite = !isWhite;
 		}
 	}
+	EndTurn();
 }
 
 ///

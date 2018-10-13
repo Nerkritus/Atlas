@@ -30,8 +30,6 @@ void TerraFormaGame::InputProcessing(Atlas::Input* input)
 	if (_scene != nullptr) {
 		_scene->InputProcessing(input);
 	}
-
-
 }
 
 void TerraFormaGame::UpdateGame(double frameDelta)

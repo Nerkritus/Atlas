@@ -22,8 +22,12 @@ namespace AtlasCheckers
 		void UpdateMenuSelection(bool prev);
 		void ShowHelp(bool show);
 
+		void SetGameRunning(bool running);
+
 		bool IsSelectionPending() { return _selectionPending; }
 		MainMenuItemsEnum GetSelection() { _selectionPending = false; return _currentMenuSelection; }
+
+		bool IsShowingHelp() { return _showingHelp; }
 		
 	private:
 		virtual void LoadDynamicAssets();
@@ -36,6 +40,7 @@ namespace AtlasCheckers
 		// Maintain a pointer to some things we need
 		Atlas::Sprite* _menuBackground;
 		Atlas::Text* _newGameLabel;
+		Atlas::Text* _resumeGameLabel;
 		Atlas::Text* _loadGameLabel;
 		Atlas::Text* _helpLabel;
 		Atlas::Text* _exitLabel;
@@ -57,6 +62,7 @@ namespace AtlasCheckers
 
 		bool _selectionPending;
 
+		bool _showingHelp = false;
 
 	};
 }
