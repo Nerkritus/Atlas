@@ -1,6 +1,5 @@
 #pragma once
 #include "BaseManager.h"
-//#include "alc.h"
 #include "glm.hpp"
 #include <string>
 #include <vector>
@@ -21,16 +20,6 @@ namespace Atlas {
 
 		// the file location
 		std::string soundLocation;
-
-	//public:
-	//	SoundInfo& operator=(const SoundInfo& toCopy)
-	//	{
-	//		this->soundId = toCopy.soundId;
-	//		this->soundLocation = toCopy.soundLocation;
-	//		this->soundName = toCopy.soundName;
-
-	//		return *this;
-	//	}
 	};
 
 	// Manages the loading and unloading of sounds and the playing of sounds.
@@ -57,8 +46,6 @@ namespace Atlas {
 		// Sound System methods
 		void toggleMuted();
 
-		//friend DWORD WINAPI soundProc(void* soundManager);
-
 	private:
 
 		unsigned long _nextSoundId;
@@ -68,9 +55,6 @@ namespace Atlas {
 		const int MAX_SOUNDS = 10;
 
 		bool initialiseFMod();
-
-		//bool loadSoundInfoList();
-		//SoundInfo parseSoundInfoLine(wchar_t *line);
 
 		FMOD::System *_fmodSystem;
 
@@ -85,10 +69,5 @@ namespace Atlas {
 
 		// Channels returned from FMOD on call to playSound.
 		std::vector<FMOD::Channel*> _activeChannels;
-
-		//// The ID of the thread that the sound is running in.
-		//DWORD _threadId;
-
-		//HANDLE _threadHandle;
 	};
 }

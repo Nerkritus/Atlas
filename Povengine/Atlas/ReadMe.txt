@@ -1,29 +1,59 @@
-========================================================================
-    STATIC LIBRARY : Atlas Project Overview
-========================================================================
+Atlas
+----------------
+This library represents the bulk of functionality in the Atlas engine
 
-AppWizard has created this Atlas library project for you.
+Entities
+----
+Provides all of the basic entity types ranging from primitives like triangles, spheres, to more complex entities affected by physics, complex meshes etc.
 
-No source files were created as part of your project.
+Enums
+----
+Enums serving various purposes
 
+Game
+----
+	Graphics
+	----
+	Provides graphical functions such as rendering geometry, fonts, cameras etc.
 
-Atlas.vcxproj
-    This is the main project file for VC++ projects generated using an Application Wizard.
-    It contains information about the version of Visual C++ that generated the file, and
-    information about the platforms, configurations, and project features selected with the
-    Application Wizard.
+	Input
+	----
+	Nothing here yet
 
-Atlas.vcxproj.filters
-    This is the filters file for VC++ projects generated using an Application Wizard. 
-    It contains information about the association between the files in your project 
-    and the filters. This association is used in the IDE to show grouping of files with
-    similar extensions under a specific node (for e.g. ".cpp" files are associated with the
-    "Source Files" filter).
+----
+Managers
+----
+Atlas Engine follows a design pattern where the engine is comprised of compartmentalised subsystems. Each subsystem is responsible for managing a certain aspect of the engine.
 
-/////////////////////////////////////////////////////////////////////////////
-Other notes:
+	AtlasManager
+	----
+	This is the main manager under which all subsytems are created. This manager is responsible for building up and tearing down the window, loading/unloading game scenes and passing events down to subsystems
 
-AppWizard uses "TODO:" comments to indicate parts of the source code you
-should add to or customize.
+	Audio
+	----
+	This manager initialises and controls interaction with the audio library provided by FMOD. Handles loading and playing sounds
 
-/////////////////////////////////////////////////////////////////////////////
+	Fonts
+	----
+	Handles loading and rendering of fonts
+
+	Input
+	----
+	Handles all forms of user input into the system (e.g. keyboard, mouse, controllers)
+
+	IO
+	----
+	Provides IO methods specific to AtlasEngine, such as providing methods to find the location of data files etc. as well as loading file formats such as 3D meshes
+
+	Physics
+	-----
+	Provides physics simulation through the Bullet physics engine
+
+	TextureManager
+	----
+	Handles loading and unloading of textures ensuring that the same texture is only loaded once etc.
+
+----
+Windowing
+----
+Provides the basic windowing functions to create the operating system window to display the engine output. An abstraction (AtlasWindow) provides cross-platform support, and native window implementations are underneath this layer
