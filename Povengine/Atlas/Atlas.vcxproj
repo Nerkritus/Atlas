@@ -195,7 +195,7 @@
     <ClInclude Include="ShaderManager.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="Win32Window.h" />
-    <ClInclude Include="Window.h" />
+    <ClInclude Include="AtlasWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AtlasGame.cpp" />
@@ -232,7 +232,7 @@
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="Transformable.cpp" />
     <ClCompile Include="Win32Window.cpp" />
-    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="AtlasWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\AtlasCheckers\AtlasCheckers.vcxproj" />

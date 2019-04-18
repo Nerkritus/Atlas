@@ -1,6 +1,5 @@
 #include "Mesh.h"
 #include "AtlasGL.h"
-#include <random>
 #include "..\AtlasAPI\AtlasAPIHelper.h"
 
 using namespace Atlas;

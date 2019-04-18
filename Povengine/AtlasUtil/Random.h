@@ -1,5 +1,6 @@
 #pragma once
 
+#include <chrono>
 #include <random>
 
 namespace Atlas {
@@ -7,17 +8,14 @@ namespace Atlas {
 	class Random
 	{
 	public:
+		static void Reseed();
 
-		void Reseed();
-
-		int GetInt(int min, int max);
-		float GetFloat(float min = 0.0f, float max = 1.0f);
+		static int GetInt(int max);
+		static int GetInt(int min, int max);
+		static float GetFloat(float min = 0.0f, float max = 1.0f);
 		
 	private:
 
-		std::default_random_engine rng;// (AtlasAPI::AtlasAPIHelper::GetTicks() * 1000);
-		std::uniform_int_distribution<int> intDist;
-		std::uniform_real_distribution<float> realDist;
+		static std::default_random_engine rng;
 	};
-
 }

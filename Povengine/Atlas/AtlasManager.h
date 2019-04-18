@@ -1,7 +1,7 @@
 #pragma once
 #include "BaseManager.h"
 #include <chrono>
-#include "Window.h"
+#include "AtlasWindow.h"
 #include "Scene.h"
 #include "../AtlasUtil/AtlasLog.h"
 #include "Subsystems.h"
@@ -16,7 +16,7 @@ namespace Atlas
 		AtlasManager(AtlasGame* game);
 		~AtlasManager();
 
-		Window* getWindow();
+		AltasWindow* getWindow();
 
 		bool Initialise();
 
@@ -40,7 +40,7 @@ namespace Atlas
 		void LoadShaders();
 
 		// Members
-		Window* _applicationWindow;	// The desktop window we're rendering inside
+		AltasWindow* _applicationWindow;	// The desktop window we're rendering inside
 
 		Subsystems _subsystems;
 

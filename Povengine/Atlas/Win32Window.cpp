@@ -10,7 +10,7 @@ using namespace Atlas;
 std::string Win32Window::MAIN_WINDOW_CLASS_NAME = "AtlasWin32ApplicationClassName";
 
 Win32Window::Win32Window(AtlasManager* parent)
-	:Window(parent)
+	:AltasWindow(parent)
 {
 	// Init
 	_hInstance = 0;
@@ -105,7 +105,7 @@ bool Win32Window::showMessageBox(AtlasMessageTypeEnum type, std::string title, s
 void Win32Window::setCaptureMouse(bool enable)
 {
 	static HWND _prevCap;
-	Window::setCaptureMouse(enable);
+	AltasWindow::setCaptureMouse(enable);
 
 	int result = ShowCursor(!enable);
 	if (enable) {

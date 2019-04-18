@@ -143,7 +143,6 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AtlasMessageBox.h" />
     <ClInclude Include="AtlasLog.h" />
     <ClInclude Include="AtlasStopwatch.h" />
     <ClInclude Include="ImageLoader.h" />
@@ -154,7 +153,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AtlasLog.cpp" />
-    <ClCompile Include="AtlasMessageBox.cpp" />
     <ClCompile Include="AtlasStopwatch.cpp" />
     <ClCompile Include="ImageLoader.cpp" />
     <ClCompile Include="lodepng.cpp" />

@@ -1,11 +1,11 @@
 #pragma once
 #include <Windows.h>
-#include "Window.h"
+#include "AtlasWindow.h"
 #include <string>
 
 namespace Atlas
 {
-	class Win32Window : public Window
+	class Win32Window : public AltasWindow
 	{
 	public:
 		Win32Window(AtlasManager* parent);

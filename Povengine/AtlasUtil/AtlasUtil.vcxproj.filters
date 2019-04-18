@@ -1,80 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="include">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="src">
-      <UniqueIdentifier>{58c8d79a-0d81-471c-8bb3-d5a2aef0f989}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\UI">
-      <UniqueIdentifier>{d69289f0-b9d5-41c5-b48b-7bf2339764de}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\IO">
-      <UniqueIdentifier>{ae579136-a1c1-4d79-ae36-31a50ce84670}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\Graphics">
+    <Filter Include="Graphics">
       <UniqueIdentifier>{ab61bc5c-3128-470f-b124-73152837daf3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\Time">
-      <UniqueIdentifier>{2a488de3-1816-463f-b2ba-2a157efccd93}</UniqueIdentifier>
+    <Filter Include="IO">
+      <UniqueIdentifier>{ae579136-a1c1-4d79-ae36-31a50ce84670}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\Math">
+    <Filter Include="Math">
       <UniqueIdentifier>{a2e61e3f-5def-477e-a076-8d6fe580b30b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Time">
+      <UniqueIdentifier>{2a488de3-1816-463f-b2ba-2a157efccd93}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AtlasMessageBox.h">
-      <Filter>include\UI</Filter>
-    </ClInclude>
     <ClInclude Include="AtlasLog.h">
-      <Filter>include\IO</Filter>
+      <Filter>IO</Filter>
     </ClInclude>
     <ClInclude Include="Vertex.h">
-      <Filter>include\Graphics</Filter>
+      <Filter>Graphics</Filter>
     </ClInclude>
     <ClInclude Include="ImageLoader.h">
-      <Filter>include\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="lodepng.h">
-      <Filter>include\IO</Filter>
-    </ClInclude>
-    <ClInclude Include="jpeg_decoder.h">
-      <Filter>include\IO</Filter>
+      <Filter>Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Random.h">
-      <Filter>include\Math</Filter>
+      <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="AtlasStopwatch.h">
-      <Filter>include\Time</Filter>
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="jpeg_decoder.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="lodepng.h">
+      <Filter>Graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AtlasLog.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="AtlasMessageBox.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="ImageLoader.cpp">
-      <Filter>include\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="lodepng.cpp">
-      <Filter>include\IO</Filter>
+      <Filter>Graphics</Filter>
     </ClCompile>
     <ClCompile Include="Random.cpp">
-      <Filter>include\Math</Filter>
+      <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="AtlasStopwatch.cpp">
-      <Filter>include\Time</Filter>
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="AtlasLog.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="lodepng.cpp">
+      <Filter>Graphics</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

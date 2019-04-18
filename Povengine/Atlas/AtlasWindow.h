@@ -6,12 +6,12 @@ namespace Atlas
 {
 	class AtlasManager;
 
-	class Window
+	class AltasWindow
 	{
 	public:
-		Window(AtlasManager* parent);
+		AltasWindow(AtlasManager* parent);
 
-		virtual ~Window();
+		virtual ~AltasWindow();
 
 		virtual bool createWindow(std::string& title, unsigned int width, unsigned int height) = 0;
 

@@ -1,7 +1,7 @@
 #include "Cube.h"
 #include "AtlasGL.h"
-#include <random>
 #include "..\AtlasAPI\AtlasAPIHelper.h"
+#include "..\AtlasUtil\Random.h"
 
 using namespace Atlas;
 
@@ -78,12 +78,9 @@ void Cube::InitData()
 		-_size,  _size,  _size,  	0.0f, 1.0f,		0.0f, 1.0f, 0.0f,	// 7
 	};
 
-	std::default_random_engine rng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
-	std::uniform_real_distribution<float> dist(0, 1);
-
-	float r = dist(rng);
-	float g = dist(rng);
-	float b = dist(rng);
+	float r = Random::GetFloat();
+	float g = Random::GetFloat();
+	float b = Random::GetFloat();
 
 	_material.ambientColour = glm::vec3(0.0f, 0.08f, 0.34f);
 	_material.diffuseColour = glm::vec3(r, g, b);

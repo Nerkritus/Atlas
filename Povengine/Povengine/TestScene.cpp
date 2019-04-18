@@ -1,12 +1,13 @@
 #include "TestScene.h"
 #include "../Atlas/IO.h"
+#include "../AtlasUtil/Random.h"
 
 using namespace Atlas;
 using namespace AtlasDemo;
 using namespace AtlasUtil;
 
 TestScene::TestScene()
-	: Scene("main.as")
+	: Scene("demo1.as")
 {
 
 }
@@ -24,9 +25,9 @@ void TestScene::UpdateScene(double frameDelta)
 	Scene::UpdateScene(frameDelta);
 
 	if (GetRuntimeMs() - _lastSpawn > 1000) {
-		int random = rand() % 10;
-		int random2 = rand() % 10;
-		double diff = (rand() % 10) / 10.0;
+		int random = Random::GetInt(10);
+		int random2 = Random::GetInt(10);
+		double diff = (Random::GetInt(10)) / 10.0;
 
 		// Test finite
 		EntityCreateInfo ei;
@@ -40,31 +41,6 @@ void TestScene::UpdateScene(double frameDelta)
 		ei.mass = 1.0f;
 		AddEntity(_subsystems._geometry->CreateEntity(ei, _subsystems._phys));
 
-
-		//random = rand() % 10;
-		//diff = (rand() % 10) / 10.0;
-		//ei.uniformScale = diff;
-		//ei.pos = glm::vec3(random - 5, 15, 5);
-		////FiniteEntity* shortEntity = new FiniteEntity(10);
-		//AddEntity(_subsystems._geometry->CreateEntity(ei, _subsystems._phys));
-
-		//random = rand() % 10;
-		//diff = (rand() % 10) / 10.0;
-		//ei.uniformScale = diff;
-		//ei.pos = glm::vec3(random - 5, 15, -5);
-		////shortEntity = new FiniteEntity(10);
-		//AddEntity(_subsystems._geometry->CreateEntity(ei, _subsystems._phys));
-
 		_lastSpawn = GetRuntimeMs();
 	}
-
-	//if (_textClock.GetElapsedMs() > 100) {
-	//	std::string info = "Scene: " + _name + ", FPS: " + std::to_string(fps);
-	//	_textItems[0]->SetText(_titleText + info);
-
-	//	std::string entityInfo = "Total entities: " + std::to_string(_entities.size());
-	//	_textItems[1]->SetText(entityInfo);
-
-	//	_textClock.Restart();
-	//}
 }

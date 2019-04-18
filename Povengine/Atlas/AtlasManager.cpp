@@ -5,7 +5,6 @@
 
 #include "Win32Window.h"
 #include "OpenGLRenderer.h"
-#include "../AtlasUtil/AtlasMessageBox.h"
 #include "../AtlasAPI/AtlasAPIHelper.h"
 #include "IO.h"
 #include "SceneParser.h"
@@ -77,8 +76,8 @@ AtlasManager::~AtlasManager()
 /// <summary>
 /// Creates the platform appropriate window and returns it
 /// </summary>
-/// <returns>a platform specific window based on the Window class</returns>
-Window* AtlasManager::getWindow()
+/// <returns>a platform specific window based on the AltasWindow class</returns>
+AltasWindow* AtlasManager::getWindow()
 {
 	if (_applicationWindow != nullptr) {
 		return _applicationWindow;

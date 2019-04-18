@@ -132,8 +132,6 @@ void Scene::Start()
 
 	_sceneClock.Start();
 
-	srand(std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count());
-
 	for (auto t : _spriteEntities) {
 		t->AdjustAlignment(_subsystems._renderer->GetWidth(), _subsystems._renderer->GetHeight());
 	}

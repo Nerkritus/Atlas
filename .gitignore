@@ -31,3 +31,5 @@ Debug
 Bullet
 freetype-2.8.1
 include
+/Povengine/.vs/Povengine/v15/ipch/*.ipch
+*.ipch
