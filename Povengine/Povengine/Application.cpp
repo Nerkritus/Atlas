@@ -2,11 +2,11 @@
 #include <Windows.h>
 #include "..\Atlas\AtlasManager.h"
 #include "..\Atlas\Win32Window.h"
-#include "TerraFormaGame.h"
+#include "AtlasDemoGame.h"
 #include "..\Atlas\AtlasMessageBoxEnums.h"
 
 using namespace Atlas;
-using namespace TerraForma;
+using namespace AtlasDemo;
 //--------------------------------------------------------------------------------------
 // Entry point to the program. Initializes everything and goes into a message processing 
 // loop. Idle time is used to render the scene.
@@ -14,8 +14,8 @@ using namespace TerraForma;
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, int nCmdShow)
 {
 	std::string baseDir = "S:\\Development\\Povengine\\Build";
-	TerraFormaGame game(baseDir);
-	AtlasManager atlasManager(&game);
+	AtlasDemoGame demo(baseDir);
+	AtlasManager atlasManager(&demo);
 
 	Win32Window* window = (Win32Window*)atlasManager.getWindow();
 
@@ -30,5 +30,6 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
 
 	int retVal = atlasManager.start();
 
-	return retVal;
+	//return retVal;
+	return 0;
 }

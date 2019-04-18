@@ -1,5 +1,5 @@
 #include "ShaderManager.h"
-#include "glew.h"
+#include "AtlasGL.h"
 
 #include <iostream>
 #include <fstream>

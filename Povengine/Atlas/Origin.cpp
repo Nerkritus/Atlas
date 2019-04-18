@@ -1,5 +1,5 @@
 #include "Origin.h"
-#include "glew.h"
+#include "AtlasGL.h"
 
 using namespace Atlas;
 

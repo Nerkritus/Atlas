@@ -1,5 +1,5 @@
 #include "TextureManager.h"
-#include "glew.h"
+#include "AtlasGL.h"
 #include "..\AtlasUtil\ImageLoader.h"
 
 using namespace Atlas;

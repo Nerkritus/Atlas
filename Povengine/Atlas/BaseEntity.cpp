@@ -1,6 +1,6 @@
 #include "BaseEntity.h"
 
-#include "glew.h"
+#include "AtlasGL.h"
 #include "..\AtlasUtil\ImageLoader.h"
 #include "Light.h"
 

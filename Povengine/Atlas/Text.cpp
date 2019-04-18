@@ -1,6 +1,6 @@
 #include "Text.h"
 
-#include "glew.h"
+#include "AtlasGL.h"
 
 namespace Atlas
 {

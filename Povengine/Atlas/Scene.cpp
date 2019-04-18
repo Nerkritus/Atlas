@@ -1,5 +1,5 @@
 #include "Scene.h"
-#include "glew.h"
+#include "AtlasGL.h"
 #include "IO.h"
 #include "..\AtlasAPI\AtlasAPIHelper.h"
 #include "EntityInstance.h"

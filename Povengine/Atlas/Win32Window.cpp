@@ -263,7 +263,7 @@ HWND Win32Window::getWindowHandle()
 
 LRESULT CALLBACK Win32Window::staticWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-	Win32Window *window;
+	Win32Window *window = nullptr;
 
 	if (message == WM_NCCREATE) {
 		// If we're receiving this message then it's the first, so here is where we should set our
@@ -271,15 +271,14 @@ LRESULT CALLBACK Win32Window::staticWndProc(HWND hWnd, UINT message, WPARAM wPar
 		// Window in the lParam of the create window.
 		window = (Win32Window *)((LPCREATESTRUCT)lParam)->lpCreateParams;
 
-		SetWindowLongPtr(hWnd, GWLP_USERDATA, (long)window);
-
+		SetWindowLongPtr(hWnd, GWLP_USERDATA, (LONG_PTR)window);
 	}
 	else {
 		// otherwise, call the instance version
 		window = (Win32Window *)GetWindowLongPtr(hWnd, GWLP_USERDATA);
 	}
 
-	if (window) {
+	if (window != nullptr) {
 		return window->wndProc(hWnd, message, wParam, lParam);
 	}
 	else {

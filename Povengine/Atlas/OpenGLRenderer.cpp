@@ -2,8 +2,8 @@
 #include <Windows.h>
 #endif
 #include "OpenGLRenderer.h"
-#define GLEW_STATIC
-#include "glew.h"
+#include "AtlasGL.h"
+
 #include <gl/GL.h>
 #include <glm.hpp>
 #include <gtc/matrix_transform.hpp>

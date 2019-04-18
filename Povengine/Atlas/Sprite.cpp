@@ -1,6 +1,6 @@
 #include "Sprite.h"
 
-#include "glew.h"
+#include "AtlasGL.h"
 
 namespace Atlas
 {

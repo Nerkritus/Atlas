@@ -1,5 +1,5 @@
 #include "Transformable.h"
-#include "glew.h"
+#include "AtlasGL.h"
 #include "..\AtlasAPI\AtlasAPIHelper.h"
 
 using namespace Atlas;

@@ -1,7 +1,7 @@
 #pragma once
 #include "../Atlas/Scene.h"
 
-namespace TerraForma
+namespace AtlasDemo
 {
 	class TestScene : public Atlas::Scene
 	{

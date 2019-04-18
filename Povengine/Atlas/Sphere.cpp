@@ -1,6 +1,6 @@
 #include "Sphere.h"
 
-#include "glew.h"
+#include "AtlasGL.h"
 #include "glm.hpp"
 
 

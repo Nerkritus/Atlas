@@ -2,7 +2,7 @@
 #include "../Atlas/IO.h"
 
 using namespace Atlas;
-using namespace TerraForma;
+using namespace AtlasDemo;
 using namespace AtlasUtil;
 
 TestScene::TestScene()

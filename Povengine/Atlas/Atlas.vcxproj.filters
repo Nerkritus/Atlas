@@ -190,6 +190,9 @@
     <ClInclude Include="BaseManager.h">
       <Filter>Managers</Filter>
     </ClInclude>
+    <ClInclude Include="AtlasGL.h">
+      <Filter>Game\Graphics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Win32Window.cpp">

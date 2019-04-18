@@ -42,7 +42,7 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -69,7 +69,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>
@@ -84,8 +86,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>S:\Development\Povengine\Dependencies\GLEW\lib\Win32;C:\Program Files %28x86%29\FMOD SoundSystem\FMOD Studio API Windows\api\lowlevel\lib;S:\Development\Povengine\Dependencies\Bullet\bin;S:\Development\Povengine\Dependencies\freetype-2.8.1\objs\vc2010\Win32;S:\Development\Povengine\Dependencies\tinyxml\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;OpenGL32.lib;glew32s.lib;BulletCollision_vs2015_debug.lib;BulletDynamics_vs2015_debug.lib;LinearMath_vs2015_debug.lib;freetype281d.lib;fmod_vc.lib;tinyxml2_debug.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>S:\Development\Povengine\Dependencies\GLEW\lib\Win32;C:\Program Files %28x86%29\FMOD SoundSystem\FMOD Studio API Windows\api\lowlevel\lib;S:\Development\Povengine\Dependencies\Bullet\bin\x86;S:\Development\Povengine\Dependencies\freetype-2.8.1\bin\x86;S:\Development\Povengine\Dependencies\tinyxml\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;OpenGL32.lib;glew32s.lib;BulletCollision_vs2017_debug.lib;BulletDynamics_vs2017_debug.lib;LinearMath_vs2017_debug.lib;freetype281d.lib;fmod_vc.lib;tinyxml2_debug.lib</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -95,11 +97,16 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>S:\Development\Povengine\Dependencies\GLEW\include;S:\Development\Povengine\Dependencies\glm;C:\Program Files %28x86%29\FMOD SoundSystem\FMOD Studio API Windows\api\lowlevel\inc;S:\Development\Povengine\Dependencies\Bullet;S:\Development\Povengine\Dependencies\tinyxml\include;S:\Development\Povengine\Dependencies\freetype-2.8.1\include;S:\Development\Povengine\Dependencies\freetype-2.8.1\include\freetype\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>S:\Development\Povengine\Dependencies\GLEW\lib\x64;C:\Program Files %28x86%29\FMOD SoundSystem\FMOD Studio API Windows\api\lowlevel\lib;S:\Development\Povengine\Dependencies\Bullet\bin\x64;S:\Development\Povengine\Dependencies\freetype-2.8.1\bin\x64;S:\Development\Povengine\Dependencies\tinyxml\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenGL32.lib;glew32s.lib;BulletCollision_vs2017_x64_debug.lib;BulletDynamics_vs2017_x64_debug.lib;LinearMath_vs2017_x64_debug.lib;freetype281d.lib;fmod64_vc.lib;tinyxml2_debug.lib</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -140,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AtlasGame.h" />
+    <ClInclude Include="AtlasGL.h" />
     <ClInclude Include="AtlasKey.h" />
     <ClInclude Include="AtlasManager.h" />
     <ClInclude Include="AtlasMessageBoxEnums.h" />

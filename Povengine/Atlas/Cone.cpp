@@ -1,6 +1,6 @@
 #include "Cone.h"
 
-#include "glew.h"
+#include "AtlasGL.h"
 #include "glm.hpp"
 
 using namespace Atlas;

@@ -18,18 +18,18 @@
     <ClCompile Include="Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TerraFormaGame.cpp">
+    <ClCompile Include="TestScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TestScene.cpp">
+    <ClCompile Include="AtlasDemoGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TerraFormaGame.h">
+    <ClInclude Include="TestScene.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="TestScene.h">
+    <ClInclude Include="AtlasDemoGame.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

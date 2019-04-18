@@ -16,7 +16,7 @@ namespace Atlas
 	{
 	public:
 		Subsystems()
-			: _renderer(nullptr), _shaderManager(nullptr), _input(nullptr), _audio(nullptr), _phys(nullptr), _texManager(nullptr), _fonts(nullptr), _log(nullptr)
+			: _renderer(nullptr), _shaderManager(nullptr), _input(nullptr), _audio(nullptr), _phys(nullptr), _texManager(nullptr), _fonts(nullptr), _log(nullptr), _geometry(nullptr)
 		{}
 
 		AtlasUtil::AtlasLog* _log;

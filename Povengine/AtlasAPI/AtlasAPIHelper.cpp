@@ -177,6 +177,10 @@ std::string AtlasAPIHelper::ConvertUTF16ToUTF8(const wchar_t* toConvert)
 	std::string out;
 	int bufLen = WideCharToMultiByte(CP_UTF8, 0, toConvert, -1, NULL, 0, NULL, NULL);	// Call to retrieve the required buffer size
 
+	if (bufLen == 0) {
+		return out;
+	}
+
 	char * buf = new char[bufLen];
 	WideCharToMultiByte(CP_UTF8, 0, toConvert, -1, buf, bufLen, NULL, NULL);	// Now actually convert the string
 	out = buf;
@@ -188,7 +192,12 @@ std::string AtlasAPIHelper::ConvertUTF16ToUTF8(const wchar_t* toConvert)
 std::wstring AtlasAPIHelper::ConvertUTF8ToUTF16(const char* toConvert)
 {
 	std::wstring out;
+
 	int bufLen = MultiByteToWideChar(CP_UTF8, 0, toConvert, -1, NULL, 0);
+
+	if (bufLen == 0) {
+		return out;
+	}
 	
 	wchar_t* buf = new wchar_t[bufLen];
 	MultiByteToWideChar(CP_UTF8, 0, toConvert, -1, buf, bufLen);

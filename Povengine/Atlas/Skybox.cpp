@@ -1,5 +1,5 @@
 #include "Skybox.h"
-#include "glew.h"
+#include "AtlasGL.h"
 #include <random>
 #include <chrono>
 #include "..\AtlasAPI\AtlasAPIHelper.h"

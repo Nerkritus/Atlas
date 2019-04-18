@@ -1,5 +1,5 @@
 #include "Mesh.h"
-#include "glew.h"
+#include "AtlasGL.h"
 #include <random>
 #include "..\AtlasAPI\AtlasAPIHelper.h"
 

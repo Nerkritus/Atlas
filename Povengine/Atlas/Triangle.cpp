@@ -1,5 +1,5 @@
 #include "Triangle.h"
-#include "glew.h"
+#include "AtlasGL.h"
 
 using namespace Atlas;
 

@@ -4,13 +4,13 @@
 #include <string>
 
 
-namespace TerraForma
+namespace AtlasDemo
 {
-	class TerraFormaGame : public Atlas::AtlasGame
+	class AtlasDemoGame : public Atlas::AtlasGame
 	{
 	public:
-		TerraFormaGame(std::string& basePath);
-		virtual ~TerraFormaGame();
+		AtlasDemoGame(std::string& basePath);
+		virtual ~AtlasDemoGame();
 
 		virtual bool InitialiseGame();
 		virtual Atlas::Scene* GetPendingScene();
